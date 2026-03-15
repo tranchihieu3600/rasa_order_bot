@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Tensorboard logs
+tensorboard/
+runs/
+logs/
+
+# Model files
+models/
+*.h5
+*.pt
+*.pth
+*.ckpt
+
+# Dataset
+data/
+datasets/
+
+# Large compressed files
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+.rasa/
+tensorboard/
+models/
+*.zip
+*.tar.gz
+__pycache__/

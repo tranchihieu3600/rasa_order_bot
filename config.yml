@@ -1,0 +1,61 @@
+language: "vi"
+
+pipeline:
+  # học theo từ hoàn chỉnh và ký tự dựa trên khoảng trắng
+  - name: WhitespaceTokenizer
+
+  # Featurizer 1: Học theo từ hoàn chỉnh
+  # Tìm các mẫu (pattern) đặc biệt nếu bạn có định nghĩa regex trong NLU.
+  - name: RegexFeaturizer
+
+  # Học cấu trúc ngữ pháp và từ vựng cơ bản.
+  - name: LexicalSyntacticFeaturizer
+
+  - name: CountVectorsFeaturizer
+    analyzer: word # Phân tích theo từ (nghĩa là học theo từ hoàn chỉnh)
+    min_ngram: 1
+    max_ngram: 5 # <--- QUAN TRỌNG: Tăng lên 5 để bot học được cụm 5 từ đi liền nhau
+
+  # Featurizer 2: Học theo ký tự (n-gram) -> Giúp bắt lỗi chính tả tốt hơn
+  #1-gram: r, á, n
+  # 2-gram: r, rá, án, n
+  # 3-gram: rá, rán, án
+  # 4-gram: rán, rán
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+
+  # Classifier chính
+  - name: DIETClassifier
+    epochs: 150
+    constrain_similarities: true #
+    tensorboard_log_directory: "./tensorboard"
+    evaluate_every_number_of_epochs: 5 #Cứ sau 5 vòng học (epoch), bot sẽ tự làm một bài kiểm tra nhỏ để xem mình học tiến bộ đến đâu.
+    evaluate_on_number_of_examples: 0 # 0 = dùng toàn bộ dữ liệu kiểm tra để đánh giá
+
+  # Xử lý đồng nghĩa (Entity Synonyms NLU)
+  - name: EntitySynonymMapper
+
+  # Xử lý các câu chit-chat (nếu có)
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+    tensorboard_log_directory: "./tensorboard"
+
+policies:
+  - name: MemoizationPolicy
+
+  # Xử lý logic cứng
+  # - name: RulePolicy
+
+  # Xử lý logic hội thoại phức tạp (Stories)
+  - name: TEDPolicy
+    max_history: 5 # Số bước hội thoại tối đa để bot xem xét khi dự đoán bước tiếp theo
+    epochs: 150
+    constrain_similarities: true
+    tensorboard_log_directory: "./tensorboard"
+# Ví dụ: Khi khách nói "Đồng ý".
+# Nếu 2 câu trước bot hỏi: "Bạn chốt đơn nhé?" -> "Đồng ý" nghĩa là confirm.
+# Nếu 2 câu trước bot hỏi: "Bạn muốn hủy không?" -> "Đồng ý" nghĩa là cancel
+assistant_id: 20250928-024133-broad-ensemble

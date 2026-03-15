@@ -1,0 +1,352 @@
+[
+  {
+    "text": "cho Bàn Vip 3 12 Bánh Flan",
+    "entities": [
+      {
+        "start": 4,
+        "end": 13,
+        "value": "Bàn Vip 3",
+        "entity": "table"
+      },
+      {
+        "start": 14,
+        "end": 16,
+        "value": "12",
+        "entity": "quantity"
+      },
+      {
+        "start": 17,
+        "end": 26,
+        "value": "Bánh Flan",
+        "entity": "food"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "table",
+        "start": 4,
+        "end": 16,
+        "confidence_entity": 0.6640058755874634,
+        "value": "Bàn Vip 3 12",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "food",
+        "start": 17,
+        "end": 26,
+        "confidence_entity": 0.9998218417167664,
+        "value": "Bánh Flan",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Bàn 6 : 2 Phở và 2 Trà Đá",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Bàn 6",
+        "entity": "table"
+      },
+      {
+        "start": 8,
+        "end": 9,
+        "value": "2",
+        "entity": "quantity"
+      },
+      {
+        "start": 10,
+        "end": 13,
+        "value": "Phở",
+        "entity": "food"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "quantity"
+      },
+      {
+        "start": 19,
+        "end": 25,
+        "value": "Trà Đá",
+        "entity": "food"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "table",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.9995879530906677,
+        "value": "Bàn 6",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "table",
+        "start": 8,
+        "end": 9,
+        "confidence_entity": 0.7109091281890869,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "food",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.9970898032188416,
+        "value": "Phở",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "quantity",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.9754133224487305,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "food",
+        "start": 19,
+        "end": 25,
+        "confidence_entity": 0.9995054006576538,
+        "value": "Trà Đá",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "cho Bàn 1 1 Lẩu , 10 Bún",
+    "entities": [
+      {
+        "start": 4,
+        "end": 9,
+        "value": "Bàn 1",
+        "entity": "table"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "quantity"
+      },
+      {
+        "start": 12,
+        "end": 15,
+        "value": "Lẩu",
+        "entity": "food"
+      },
+      {
+        "start": 18,
+        "end": 20,
+        "value": "10",
+        "entity": "quantity"
+      },
+      {
+        "start": 21,
+        "end": 24,
+        "value": "Bún",
+        "entity": "food"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "table",
+        "start": 4,
+        "end": 9,
+        "confidence_entity": 0.9992545247077942,
+        "value": "Bàn 1",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "quantity",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.6594609618186951,
+        "value": "1",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "food",
+        "start": 12,
+        "end": 15,
+        "confidence_entity": 0.9995614886283875,
+        "value": "Lẩu",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "table",
+        "start": 18,
+        "end": 20,
+        "confidence_entity": 0.9404751062393188,
+        "value": "10",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "food",
+        "start": 21,
+        "end": 24,
+        "confidence_entity": 0.9998664855957031,
+        "value": "Bún",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "dọn Bàn 5 1 Lẩu",
+    "entities": [
+      {
+        "start": 4,
+        "end": 9,
+        "value": "Bàn 5",
+        "entity": "table"
+      },
+      {
+        "start": 10,
+        "end": 11,
+        "value": "1",
+        "entity": "quantity"
+      },
+      {
+        "start": 12,
+        "end": 15,
+        "value": "Lẩu",
+        "entity": "food"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "table",
+        "start": 4,
+        "end": 11,
+        "confidence_entity": 0.6610813736915588,
+        "value": "Bàn 5 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "food",
+        "start": 12,
+        "end": 15,
+        "confidence_entity": 0.9997254014015198,
+        "value": "Lẩu",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "2 Pessi 3 Trà Đá Bàn 8",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "2",
+        "entity": "quantity"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "value": "Pessi",
+        "entity": "food"
+      },
+      {
+        "start": 8,
+        "end": 9,
+        "value": "3",
+        "entity": "quantity"
+      },
+      {
+        "start": 10,
+        "end": 16,
+        "value": "Trà Đá",
+        "entity": "food"
+      },
+      {
+        "start": 17,
+        "end": 22,
+        "value": "Bàn 8",
+        "entity": "table"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "quantity",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9814697504043579,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "food",
+        "start": 2,
+        "end": 9,
+        "confidence_entity": 0.5614033937454224,
+        "value": "Pessi 3",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "food",
+        "start": 10,
+        "end": 16,
+        "confidence_entity": 0.9997873902320862,
+        "value": "Trà Đá",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "table",
+        "start": 17,
+        "end": 22,
+        "confidence_entity": 0.9963448643684387,
+        "value": "Bàn 8",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

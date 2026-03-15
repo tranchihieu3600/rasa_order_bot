@@ -1,0 +1,45 @@
+{
+  "quantity": {
+    "precision": 1.0,
+    "recall": 0.9826388888888888,
+    "f1-score": 0.9912434325744308,
+    "support": 288,
+    "confused_with": {
+      "table": 4,
+      "food": 1
+    }
+  },
+  "table": {
+    "precision": 0.9818181818181818,
+    "recall": 1.0,
+    "f1-score": 0.9908256880733944,
+    "support": 216,
+    "confused_with": {}
+  },
+  "food": {
+    "precision": 0.9985358711566618,
+    "recall": 1.0,
+    "f1-score": 0.9992673992673992,
+    "support": 682,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9957841483979764,
+    "recall": 0.9957841483979764,
+    "f1-score": 0.9957841483979764,
+    "support": 1186
+  },
+  "macro avg": {
+    "precision": 0.9934513509916146,
+    "recall": 0.9942129629629629,
+    "f1-score": 0.9937788399717414,
+    "support": 1186
+  },
+  "weighted avg": {
+    "precision": 0.9958467043858098,
+    "recall": 0.9957841483979764,
+    "f1-score": 0.9957814700722221,
+    "support": 1186
+  },
+  "accuracy": 0.9979516591560835
+}

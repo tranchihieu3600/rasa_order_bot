@@ -1,0 +1,98 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - order_food
+  - change_table
+  - remove_item
+  - confirm
+  - deny
+  - add_item
+  - cancel
+  - inform_choice
+  - change_quantity
+  - change_food
+
+entities:
+  - food
+  - quantity
+  - table
+
+slots:
+  # 1. Slot chứa JSON đơn hàng
+  pending_order:
+    type: text # Phải là text để lưu chuỗi JSON từ actions.py
+    influence_conversation: false # Quan trọng: Bot không học nội dung JSON, chỉ cần biết có slot này
+    mappings:
+      - type: custom
+
+  # 2. Slot chứa tên bàn
+  table_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  # 3. Slot hứng Entity (Cần thiết để Action.py đọc được)
+  food:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: food
+
+  quantity:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: quantity
+
+  food_to_remove: # <-- Slot mới
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: food
+        role: old_food # <-- Vai trò PHẢI khớp
+      - type: custom # Quan trọng: Giữ lại mapping type custom nếu cần
+
+  food_to_add: # <-- Slot mới
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: food
+        role: new_food # <-- Vai trò PHẢI khớp
+      - type: custom # Quan trọng: Giữ lại mapping type custom nếu cần
+
+responses:
+  utter_greet:
+    - text: "Chào bạn, tôi là bot hỗ trợ gọi món! Bạn muốn dùng gì hôm nay?"
+
+  utter_goodbye:
+    - text: "Cảm ơn bạn đã ủng hộ quán. Hẹn gặp lại!"
+
+  utter_ask_table:
+    - text: "Dạ, bạn cho mình xin số bàn hoặc nói 'mang về' nhé."
+
+  utter_ask_clarify_food:
+    - text: "Món bạn chọn có nhiều kết quả, vui lòng chọn cụ thể hơn."
+
+  utter_ask_correction:
+    - text: "Dạ xin lỗi mình nghe nhầm. Bạn muốn sửa lại món hay số lượng như thế nào ạ?"
+
+  utter_order_saved:
+    - text: "Đã lưu đơn hàng vào hệ thống."
+
+  utter_iamabot:
+    - text: "Tôi là Bot hỗ trợ gọi món tự động."
+
+actions:
+  - action_process_order
+  - action_confirm_order
+  - action_cancel_order
+  - action_list_food_options
+  - action_change_order
+  - action_resolve_choice
